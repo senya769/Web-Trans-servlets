@@ -31,16 +31,20 @@
                             <div class="card-body py-5 px-md-5">
                                 <form>
                                     <!-- Email input -->
-                                    <div class="form-outline mb-4">
-                                        <input type="email" id="form3Example3" class="form-control" name="email" />
-                                        <label class="form-label" for="form3Example3" >Email address</label>
+                                    <div class="form-floating mb-4">
+                                        <input type="email" class="form-control" id="floatingInput"  name="login"  required>
+                                        <label for="floatingInput">Email address</label>
                                     </div>
 
                                     <!-- Password input -->
-                                    <div class="form-outline mb-4">
-                                        <input type="password" id="form3Example4" class="form-control" name="password" />
-                                        <label class="form-label" for="form3Example4">Password</label>
+                                    <div class="form-floating mb-4">
+                                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                        <label for="floatingPassword">Password</label>
                                     </div>
+
+
+
+
                                     <!-- Submit button -->
                                     <button type="submit" class="btn btn-primary btn-block mb-4">
                                       Login

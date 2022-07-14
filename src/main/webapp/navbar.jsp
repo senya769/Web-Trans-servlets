@@ -20,6 +20,6 @@
         </div>
     </div>
     <a href="login.jsp" type="button" class="btn btn-outline-primary" >sing in</a>
-    <a type="button" class="btn btn-outline-primary">sing up</a>
+    <a href ="registration.jsp" type="button" class="btn btn-outline-primary">sing up</a>
 </nav>
 </html>

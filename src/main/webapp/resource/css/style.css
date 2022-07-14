@@ -17,3 +17,6 @@ nav a{
 form{
     margin-block-end: 0;
 }
+.form-check {
+    display: inline;
+}
