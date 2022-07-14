@@ -2,8 +2,9 @@
 <html>
 <head>
     <title>web-trans</title>
+     <link rel="stylesheet" href="resource/css/style.css">
 </head>
 <body>
-<h1>HELLO</h1>
+<h1>WEB-Trans</h1>
 </body>
 </html>
