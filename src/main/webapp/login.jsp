@@ -8,7 +8,7 @@
 <body>
 <form action="#" method="post">
     <!-- Section: Design Block -->
-    <section class="">
+    <section class="bottom-marg">
         <!-- Jumbotron -->
         <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
             <div class="container">
@@ -55,6 +55,8 @@
     </section>
     <!-- Section: Design Block -->
 </form>
+<div class="test">
 <jsp:include page="footer.jsp"/>
+</div>
 </body>
 </html>
