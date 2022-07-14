@@ -19,7 +19,7 @@
             <a class="nav-item nav-link disabled" href="#">Disabled</a>
         </div>
     </div>
-    <button type="button" class="btn btn-outline-primary">sing in</button>
-    <button type="button" class="btn btn-outline-primary">sing up</button>
+    <a href="login.jsp" type="button" class="btn btn-outline-primary" >sing in</a>
+    <a type="button" class="btn btn-outline-primary">sing up</a>
 </nav>
 </html>
