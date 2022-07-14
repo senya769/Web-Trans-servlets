@@ -11,5 +11,6 @@
 <button type="button" class="btn btn-outline-info">Add cargo</button>
 <button type="button" class="btn btn-outline-info">Find cargo</button>
 </div>
+<jsp:include page="footer.jsp"/>
 </body>
 </html>
