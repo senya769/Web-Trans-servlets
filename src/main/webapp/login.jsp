@@ -1,4 +1,5 @@
 
+<%@ page import="java.util.Objects" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -6,7 +7,7 @@
     <jsp:include page="navbar.jsp"/>
 </head>
 <body>
-<form action="#" method="post">
+<form action="${pageContext.request.contextPath}/connect" method="POST">
     <!-- Section: Design Block -->
     <section class="bottom-marg">
         <!-- Jumbotron -->
@@ -30,23 +31,23 @@
                         <div class="card">
                             <div class="card-body py-5 px-md-5">
                                 <form>
+                                <c: if test = "${isErrorNotFound == true}">
+                                    error
+                                    error
+                                    error
+                                </c:>
                                     <!-- Email input -->
                                     <div class="form-floating mb-4">
-                                        <input type="email" class="form-control" id="floatingInput"  name="login"  required>
+                                        <input type="text" class="form-control" id="floatingInput" placeholder="email" name="email" >
                                         <label for="floatingInput">Email address</label>
                                     </div>
-
                                     <!-- Password input -->
                                     <div class="form-floating mb-4">
-                                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
                                         <label for="floatingPassword">Password</label>
                                     </div>
-
-
-
-
                                     <!-- Submit button -->
-                                    <button type="submit" class="btn btn-primary btn-block mb-4">
+                                    <button type="submit" value="Login" class="btn btn-primary btn-block mb-4">
                                       Login
                                     </button>
                                 </form>

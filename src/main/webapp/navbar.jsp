@@ -1,3 +1,4 @@
+<%@ page import="com.model.User" %>
 <html>
 <head>
     <link rel="stylesheet" href="resource/css/style.css">
@@ -19,7 +20,13 @@
             <a class="nav-item nav-link disabled" href="#">Disabled</a>
         </div>
     </div>
+    <% User user = (User) session.getAttribute("user");
+        if( user == null ){ %>
     <a href="login.jsp" type="button" class="btn btn-outline-primary" >sing in</a>
     <a href ="registration.jsp" type="button" class="btn btn-outline-primary">sing up</a>
+<% } else {%>
+    <a href="profileUser.jsp" type="button" class="btn btn-outline-primary" ><%= user.getName()%></a>
+    <% }%>
+
 </nav>
 </html>

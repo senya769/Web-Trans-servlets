@@ -8,7 +8,7 @@
 <body>
 <h1>WEB-Trans</h1>
 <div class="block-homepage">
-<button type="button" class="btn btn-outline-info">Add cargo</button>
+<a href = "#" type="button" class="btn btn-outline-info">Add cargo</a>
 <button type="button" class="btn btn-outline-info">Find cargo</button>
 </div>
 <h2>WEB-Trans</h2>

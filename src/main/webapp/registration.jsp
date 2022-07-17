@@ -13,7 +13,7 @@
             <div class="row gx-lg-5 align-items-center">
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <h1 class="my-5 display-3 fw-bold ls-tight">
-                        The best offer <br />
+                        The best offer <br/>
                         <span class="text-primary">for your business</span>
                     </h1>
                     <p style="color: hsl(217, 10%, 50.8%)">
@@ -27,33 +27,35 @@
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <div class="card">
                         <div class="card-body py-5 px-md-5">
-                            <form>
+                            <form action="${pageContext.request.contextPath}/registration" method="post">
                                 <div class="form-check mb-4">
-                                    <input class="form-check-input" type="radio" name="captionUser" id="flexRadioDefault1" checked>
+                                    <input class="form-check-input" type="radio" name="captionUser"
+                                           id="flexRadioDefault1" checked value="Individual">
                                     <label class="form-check-label" for="flexRadioDefault1">
                                         Individual
                                     </label>
                                 </div>
                                 <div class="form-check mb-4">
-                                    <input class="form-check-input" type="radio" name="captionUser" id="flexRadioDefault2">
-                                    <label class="form-check-label" for="flexRadioDefault2">
-                                        Legal entity
+                                    <input class="form-check-input" type="radio" name="captionUser"
+                                           id="flexRadioDefault2" value="Legal entity>
+                                    <label class="form-check-label " for="flexRadioDefault2">
+                                    Legal entity
                                     </label>
                                 </div>
 
                                 <div class="form-floating mb-4">
-                                    <input type="text" class="form-control" id="floatingInput"  name="alias"  required>
-                                    <label for="floatingInput">Alias Name</label>
+                                    <input type="text" class="form-control" id="floatingInput" name="nickname" required>
+                                    <label for="floatingInput">Nickname</label>
                                 </div>
                                 <!-- Email input -->
-                                <div class="form-outline mb-4">
-                                    <input type="email" id="form3Example3" class="form-control" />
+                                <div class="form-floating mb-4">
+                                    <input type="email" id="form3Example3" class="form-control" name="email"/>
                                     <label class="form-label" for="form3Example3">Email address</label>
                                 </div>
 
                                 <!-- Password input -->
-                                <div class="form-outline mb-4">
-                                    <input type="password" id="form3Example4" class="form-control" />
+                                <div class="form-floating mb-4">
+                                    <input type="password" id="form3Example4" class="form-control" name="password"/>
                                     <label class="form-label" for="form3Example4">Password</label>
                                 </div>
                                 <!-- Submit button -->
