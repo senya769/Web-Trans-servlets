@@ -37,8 +37,8 @@
                                 </div>
                                 <div class="form-check mb-4">
                                     <input class="form-check-input" type="radio" name="captionUser"
-                                           id="flexRadioDefault2" value="Legal entity>
-                                    <label class="form-check-label " for="flexRadioDefault2">
+                                           id="flexRadioDefault2" value="Legal entity">
+                                    <label class="form-check-label" for="flexRadioDefault2">
                                     Legal entity
                                     </label>
                                 </div>
