@@ -20,3 +20,6 @@ form{
 .form-check {
     display: inline;
 }
+.text-lg-start{
+    padding: 10px
+}

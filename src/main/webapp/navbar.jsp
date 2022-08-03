@@ -2,14 +2,13 @@
 <html>
 <head>
     <link rel="stylesheet" href="resource/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="index.jsp">
         <img src="https://cdn-icons-png.flaticon.com/512/819/819438.png" width="30" height="30" alt="">
     </a>
-    <a class="navbar-brand" href="index.jsp">Web-Trans</a>
+    <a class="navbar-brand" href="${pageContext.request.contextPath}">Web-Trans</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -25,8 +24,17 @@
     <a href="login.jsp" type="button" class="btn btn-outline-primary" >sing in</a>
     <a href ="registration.jsp" type="button" class="btn btn-outline-primary">sing up</a>
 <% } else {%>
-    <a href="profileUser.jsp" type="button" class="btn btn-outline-primary" ><%= user.getName()%></a>
+        <div class="dropdown">
+            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                <%= user.getName()%>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="profile.jsp">Account</a></li>
+                <li><a class="dropdown-item" href="#">test</a></li>
+                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/logout">logout</a></li>
+            </ul>
+        </div>
     <% }%>
-
 </nav>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </html>

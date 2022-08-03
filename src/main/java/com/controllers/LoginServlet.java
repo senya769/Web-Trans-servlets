@@ -24,6 +24,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         String email = req.getParameter("email");
         String password = req.getParameter("password");
         User user = implUser.findByEmailAndPassword(email, password);
@@ -31,8 +32,8 @@ public class LoginServlet extends HttpServlet {
         if (user != null) {
             HttpSession session = req.getSession();
            session.setAttribute("user",user);
-            //getServletContext().getRequestDispatcher("/profileUser.jsp").forward(req, resp); // на аккаунт
-            resp.sendRedirect("http://localhost:8080/web_trans/profileUser.jsp");
+            //getServletContext().getRequestDispatcher("/profile.jsp").forward(req, resp); // на аккаунт
+            resp.sendRedirect("http://localhost:8080/web_trans/profile.jsp");
         } else {
             req.setAttribute("isErrorNotFound", true);
             getServletContext().getRequestDispatcher("/login.jsp").forward(req, resp);
