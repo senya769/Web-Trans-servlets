@@ -12,6 +12,6 @@ public class LogoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getSession().invalidate();
-        resp.sendRedirect("http://localhost:8080/web_trans/");
+        resp.sendRedirect("http://localhost:9090/web_trans/");
     }
 }

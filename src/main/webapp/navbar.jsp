@@ -1,11 +1,11 @@
 <%@ page import="com.model.User" %>
 <html>
 <head>
-    <link rel="stylesheet" href="resource/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="resource/css/navbar.css">
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.jsp">
+    <a class="navbar-brand" id = "truck-icon" href="index.jsp">
         <img src="https://cdn-icons-png.flaticon.com/512/819/819438.png" width="30" height="30" alt="">
     </a>
     <a class="navbar-brand" href="${pageContext.request.contextPath}">Web-Trans</a>

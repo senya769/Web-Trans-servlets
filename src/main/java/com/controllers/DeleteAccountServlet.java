@@ -21,7 +21,7 @@ public class DeleteAccountServlet extends HttpServlet {
         User user = (User) req.getSession().getAttribute("user");
         if(implUser.deleteUser(user.getId())){
             req.getSession().invalidate();
-            resp.sendRedirect("http://localhost:8080/web_trans/");
+            resp.sendRedirect("http://localhost:9090/web_trans/");
 
         }
         else {
@@ -31,13 +31,7 @@ public class DeleteAccountServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User user = (User) req.getSession().getAttribute("user");
-        if(implUser.deleteUser(user.getId())){
-            resp.sendRedirect("http://localhost:8080/web_trans/");
-        }
-        else {
-            getServletContext().getRequestDispatcher("/profile.jsp").forward(req,resp);
-        }
+
     }
 
     @Override

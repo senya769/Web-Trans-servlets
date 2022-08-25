@@ -41,7 +41,8 @@ public class UpdateServlet extends HttpServlet {
         userSession.setPassword(password);
         if (implUser.updateUser(userSession)) {
             req.getSession().setAttribute("user",userSession);
-            getServletContext().getRequestDispatcher("/profile.jsp").forward(req, resp);
+           // getServletContext().getRequestDispatcher("/profile.jsp").forward(req, resp);
+            resp.sendRedirect(req.getContextPath()+"/profile.jsp");
         } else {
             getServletContext().getRequestDispatcher("/update_profile.jsp").forward(req, resp);
         }

@@ -24,7 +24,7 @@ public class RegistrationServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/profile.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/WEB-INF/profile.jsp").forward(req, resp);
     }
 
     @Override
@@ -48,7 +48,7 @@ public class RegistrationServlet extends HttpServlet {
         if (implUser.createUser(user) & !duplicate) {
             User userFind = implUser.findByEmailAndPassword(email,pasw);
             sessionReg.setAttribute("user",userFind);
-            resp.sendRedirect("http://localhost:8080/web_trans/profile.jsp");
+            resp.sendRedirect("http://localhost:9090/web_trans/profile.jsp");
         }
         else {
             getServletContext().getRequestDispatcher("/registration.jsp").forward(req,resp);

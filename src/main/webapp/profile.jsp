@@ -13,7 +13,7 @@
 <head>
     <title>web-trans account</title>
     <jsp:include page="navbar.jsp"/>
-    <% User user = (User) session.getAttribute("user");
+    <% User user = (User) request.getSession().getAttribute("user");
         JDBCConnector connector = new JDBCConnector();
         ImplUser implUser = new ImplUser(connector);%>
 </head>
@@ -31,6 +31,11 @@
                         <a type="button" href="delete" class="btn btn-primary btn-rounded ">
                             Delete Account
                         </a>
+                        <%if (Objects.equals(user.getStatusUser(), "Admin")) {%>
+                        <a type="button" href="${pageContext.request.contextPath}/showUsers" class="btn btn-primary btn-rounded ">
+                           Show All Users
+                        </a>
+                        <%}%>
                     </div>
                     <div class="card-body text-center">
                         <div class="mt-3 mb-4">
@@ -52,6 +57,7 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <li><input type="text" class="form-control" name="deleteById" placeholder="id"
                                            required/>
+                                    <a class="btn-check" >+</a>
                                 </li>
                             </ul>
                         </div>

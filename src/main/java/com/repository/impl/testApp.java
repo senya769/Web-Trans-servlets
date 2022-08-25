@@ -1,14 +1,17 @@
 package com.repository.impl;
 
-import com.sun.source.tree.Tree;
+import com.connection.JDBCConnector;
+import com.model.User;
 
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class testApp {
     public static void main(String[] args) {
-       int x = new Scanner(System.in).nextInt();
-
+        JDBCConnector connector = new JDBCConnector();
+        ImplUser implUser = new ImplUser(connector);
+        List<User> res = implUser.getListUsers();
+     for(User u : res){
+         System.out.println(u);
+     }
     }
 }
