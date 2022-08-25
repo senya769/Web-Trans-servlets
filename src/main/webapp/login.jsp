@@ -31,11 +31,9 @@
                         <div class="card">
                             <div class="card-body py-5 px-md-5">
                                 <form>
-                                <c: if test = "${isErrorNotFound == true}">
-                                    error
-                                    error
-                                    error
-                                </c:>
+                                    <% if (request.getAttribute("isErrorNotFound")!=null){%>
+                                    <h3>Account is not found! Try again...</h3>
+                                    <%}%>
                                     <!-- Email input -->
                                     <div class="form-floating mb-4">
                                         <input type="text" class="form-control" id="floatingInput" placeholder="email" name="email" >

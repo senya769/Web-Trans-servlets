@@ -24,28 +24,34 @@ public class RegistrationServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/profile.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/WEB-INF/profile.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-            HttpSession sessionReg = req.getSession();
+        HttpSession sessionReg = req.getSession();
         String email = req.getParameter("email");
         String pasw = req.getParameter("password");
         String name = (req.getParameter("nickname"));
         String role = (req.getParameter("captionUser"));
+        String number = req.getParameter("number");
+        Boolean duplicate = (Boolean) sessionReg.getAttribute("duplicate");
 
         User user = new BuilderUser().email(email)
                 .password(pasw)
                 .name(name)
-                .numberPhone("null")
-                .roleUser("role")
-                .statusUser("user").build();
+                .numberPhone(number)
+                .roleUser(role)
+                .statusUser("User").build();
         //   user.setNumberPhone("null");
         //   user.setStatusUser("User");
-        if (implUser.createUser(user)) {
-            sessionReg.setAttribute("user",user);
-            resp.sendRedirect("http://localhost:8080/web_trans/profileUser.jsp");
+        if (implUser.createUser(user) & !duplicate) {
+            User userFind = implUser.findByEmailAndPassword(email,pasw);
+            sessionReg.setAttribute("user",userFind);
+            resp.sendRedirect("http://localhost:9090/web_trans/profile.jsp");
+        }
+        else {
+            getServletContext().getRequestDispatcher("/registration.jsp").forward(req,resp);
         }
 
     }
